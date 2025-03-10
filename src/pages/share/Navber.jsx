@@ -5,7 +5,17 @@ import AuthContext from '../../Context/AuthContext/AuthContext';
 const Navber = () => {
 
 
-  const { user } = useContext(AuthContext)
+  const { user, signOutUser } = useContext(AuthContext);
+
+  const hendleSignOut = () => {
+    signOutUser()
+      .then(() => {
+        console.log('successfull Sign out')
+      })
+      .catch(error => {
+        console.log("no Log out ", error)
+      })
+  }
 
   const links = <>
     <li><a>Item 1</a></li>
@@ -44,17 +54,16 @@ const Navber = () => {
           </ul>
         </div>
         <div className="navbar-end">
-
           {
             user ? <>
-                <button>Log Out</button>
+              <button onClick={hendleSignOut}>Log Out</button>
             </> : <>
               <Link className='btn bg-purple-500' to="/register">Register</Link>
-              <Link className='btn bg-purple-100 text-black' to='/signin'>Sign In</Link>
+              <Link className='btn bg-purple-100 text-black' to='/signin'>
+                <button>Sign In</button>
+              </Link>
             </>
           }
-
-
         </div>
       </div>
     </div>
