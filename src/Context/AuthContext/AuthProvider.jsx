@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AuthContext from './AuthContext';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import auth from '../../firebase/firebase.init';
 
 const AuthProvider = ({ children }) => {
@@ -13,7 +13,15 @@ const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        
+        const unSubserce = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser);
+            console.log('corrent user',currentUser)
+            setUser(false)
+        })
+
+        return () => {
+            unSubserce()
+        }
     }, [])
 
     const authInfo = {
