@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import AuthContext from '../../Context/AuthContext/AuthContext';
+import logoImg from '../../../src/assets/logo/fav-icon.png'
 
 const Navber = () => {
 
@@ -18,12 +19,13 @@ const Navber = () => {
   }
 
   const links = <>
-    <li><a>Item 1</a></li>
-    <li><a>Item 3</a></li>
+    <li><NavLink to='/'>Home</NavLink></li>
+    <li><NavLink to='/'>Home</NavLink></li>
+    <li><NavLink to='/'>Home</NavLink></li>
   </>
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 mb-8">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,7 +48,10 @@ const Navber = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-xl p-4">
+            <img className='w-11' src={logoImg} alt="img logo" />
+            <h2>job portal</h2>
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -56,7 +61,7 @@ const Navber = () => {
         <div className="navbar-end">
           {
             user ? <>
-              <button onClick={hendleSignOut}>Log Out</button>
+              <button className='btn bg-red-600' onClick={hendleSignOut}>Log Out</button>
             </> : <>
               <Link className='btn bg-purple-500' to="/register">Register</Link>
               <Link className='btn bg-purple-100 text-black' to='/signin'>
