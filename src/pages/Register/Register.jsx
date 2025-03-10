@@ -1,11 +1,11 @@
 import Lottie from "lottie-react";
 import registerAnimationData from '../../assets/lottic/register.json'
-import { createContext } from "react";
 import AuthContext from "../../Context/AuthContext/AuthContext";
+import { useContext } from "react";
 
 const Register = () => {
 
-    const {createUser} =createContext(AuthContext)
+    const {createUser} =useContext(AuthContext)
 
     const hendleRegister =e =>{
         e.preventDefault();
@@ -16,6 +16,13 @@ const Register = () => {
         // password valedation
         // const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/;
 
+        createUser(email,password)
+        .then(result =>{
+            console.log(result.user)
+        })
+        .catch(error =>{
+            console.log(error.message)
+        })
       
     }
 
