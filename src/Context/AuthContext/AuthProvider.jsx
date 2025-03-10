@@ -25,7 +25,7 @@ const AuthProvider = ({ children }) => {
         const unSubserce = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             console.log('corrent user',currentUser)
-            setUser(false)
+            setLoading(false)
         })
 
         return () => {
