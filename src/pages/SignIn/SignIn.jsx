@@ -18,8 +18,8 @@ const SignIn = () => {
 
 
         signInUser(email,password)
-        .then(currentUser =>{
-            console.log(currentUser.user)
+        .then(result =>{
+            console.log(result.user)
         })
         .catch(error =>{
             console.log(error.message)
