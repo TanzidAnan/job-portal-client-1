@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from "motion/react"
 import { easeInOut } from 'motion';
+import teme1 from '../../assets/banner/teme1.jpg'
+import teme2 from '../../assets/banner/teme2.jpg'
 
 const Banner = () => {
     return (
@@ -9,12 +11,12 @@ const Banner = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className='flex-1'>
                         <img
-                            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-                            className="max-w-sm rounded-lg shadow-2xl" />
+                            src={teme1}
+                            className="max-w-sm w-64 rounded-lg shadow-2xl" />
                     </div>
                     <div className='flex-1'>
                         <motion.h1
-                            animate={{ x: 50, color: ['blue'] }}
+                            animate={{ x: 50, color: ['#28fc03','#03adfc','#a103fc'] }}
                             transition={{ duration: 2, delay: 1, ease: easeInOut ,repeat:Infinity}}
                             className="text-5xl font-bold">The Easiest Way
                             to Get Your New Job</motion.h1>
