@@ -2,6 +2,7 @@ import Lottie from "lottie-react";
 import registerAnimationData from '../../assets/lottic/register.json'
 import AuthContext from "../../Context/AuthContext/AuthContext";
 import { useContext } from "react";
+import GoogleSignIn from "../share/GoogleSignIn";
 
 const Register = () => {
 
@@ -56,6 +57,7 @@ const Register = () => {
                                 <button className="btn btn-primary">Register</button>
                             </div>
                         </form>
+                        <GoogleSignIn></GoogleSignIn>
                     </div>
                 </div>
             </div>
