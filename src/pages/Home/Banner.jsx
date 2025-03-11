@@ -29,7 +29,7 @@ const Banner = () => {
                             to Get Your New Job</motion.h1>
                         <motion.p
                         animate={{x:50}}
-                        transition={{repeat:Infinity,ease:easeOut, duration:4,delay:6}}
+                        transition={{ duration: 2, delay: 1, ease: easeInOut, repeat: Infinity }}
                         className="py-6 w-96">
                             Each month, more than 3 million job seekers turn to
                             website in their search for work, making over 140,000
