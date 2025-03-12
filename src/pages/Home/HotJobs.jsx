@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import HotJobCard from './HotJobCard';
 
 const HotJobs = () => {
 
@@ -7,12 +8,19 @@ const HotJobs = () => {
     useEffect(() =>{
         fetch('http://localhost:5000/jobs')
         .then(res => res.json())
-        .then(data =>{console.log(data)})
+        .then(data =>{
+            setJobs(data)
+            console.log(data)
+        })
     },[])
 
     return (
         <div>
-            
+            <div>
+                {
+                    jobs.map(job =><HotJobCard key={job._id} job={job}></HotJobCard>)
+                }
+            </div>
         </div>
     );
 };

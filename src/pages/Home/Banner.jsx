@@ -7,9 +7,9 @@ import teme2 from '../../assets/banner/teme2.jpg'
 const Banner = () => {
     return (
         <div>
-            <div className="hero bg-base-200 min-h-96">
+            <div className="hero bg-slate-100 min-h-3.5 py-10 rounded-lg shadow-md">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className='flex-1 ml-16'>
+                    <div className='flex-1 ml-6'>
                         <motion.img
                             animate={{ y: [100, 50, 100] }}
                             transition={{ duration: 7, repeat: Infinity }}
@@ -30,7 +30,7 @@ const Banner = () => {
                         <motion.p
                         animate={{x:50}}
                         transition={{ duration: 2, delay: 1, ease: easeInOut, repeat: Infinity }}
-                        className="py-6 w-96">
+                        className="py-6 w-96 text-black">
                             Each month, more than 3 million job seekers turn to
                             website in their search for work, making over 140,000
                             applications every single day
