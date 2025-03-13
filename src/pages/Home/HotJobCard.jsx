@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 const HotJobCard = ({ job }) => {
-    const { _id,title, category, company, company_logo, description, jobType, salaryRange, location, requirements } = job
+    const { _id, title, category, company, company_logo, description, jobType, salaryRange, location, requirements } = job
     return (
         <div className="card bg-zinc-200 text-black shadow-sm">
             <div className='flex gap-2 pt-5 pl-5'>
@@ -30,7 +30,8 @@ const HotJobCard = ({ job }) => {
                 <p>{description}</p>
                 <div className='flex gap-3 flex-wrap'>
                     {
-                        requirements.map(skill => <p
+                        requirements.map((skill, index) => <p
+                            key={index}
                             className='border-2 border-gray-800 rounded-lg p-1 text-center hover:bg-purple-500 hover:text-white'
                         >{skill}</p>)
                     }

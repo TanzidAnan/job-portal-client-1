@@ -2,10 +2,18 @@ import React, { useContext } from 'react';
 import registerAnimationData from '../../assets/lottic/register.json'
 import Lottie from 'lottie-react';
 import AuthContext from '../../Context/AuthContext/AuthContext';
+import { useLocation, useNavigate } from 'react-router-dom';
+import GoogleSignIn from '../share/GoogleSignIn';
 
 const SignIn = () => {
 
     const {signInUser} =useContext(AuthContext)
+
+    const location =useLocation();
+    const navigate =useNavigate();
+    console.log('login location',location)
+
+    const from =location.state || "/"
 
     const hendleSignIn =e =>{
         e.preventDefault();
@@ -19,7 +27,8 @@ const SignIn = () => {
 
         signInUser(email,password)
         .then(result =>{
-            console.log(result.user)
+            console.log(result.user);
+            navigate(form)
         })
         .catch(error =>{
             console.log(error.message)
@@ -58,6 +67,7 @@ const SignIn = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Sign IN</button>
                             </div>
+                            <GoogleSignIn></GoogleSignIn>
                         </form>
                     </div>
                 </div>
