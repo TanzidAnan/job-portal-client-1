@@ -8,6 +8,7 @@ import Register from "../pages/Register/Register";
 import SignIn from "../pages/SignIn/SignIn";
 import JobDetails from "../pages/JobDetails/JobDetails";
 import PravateRoute from "./PravateRoute";
+import JobApply from "../pages/JobApply/JobApply";
 
   const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ import PravateRoute from "./PravateRoute";
           path:'/jobs/:id',
           element:<PravateRoute><JobDetails></JobDetails></PravateRoute>,
           loader:({params}) => fetch(`http://localhost:5000/jobs/${params.id}`)
+        },
+        {
+          path:'/jobApply/:id',
+          element:<PravateRoute><JobApply></JobApply></PravateRoute>,
         },
         {
             path:'/register',

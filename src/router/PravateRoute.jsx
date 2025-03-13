@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import AuthContext from '../Context/AuthContext/AuthContext';
 import { Navigate, useLocation } from 'react-router-dom';
+import { BeatLoader } from 'react-spinners';
 
 const PravateRoute = ({ children }) => {
 
@@ -10,15 +11,7 @@ const PravateRoute = ({ children }) => {
 
     if (loading) {
         return <div>
-            <Bars
-                height="80"
-                width="80"
-                radius="9"
-                color="green"
-                ariaLabel="three-dots-loading"
-                wrapperStyle
-                wrapperClass
-            />
+           <BeatLoader />
         </div>
     }
 
