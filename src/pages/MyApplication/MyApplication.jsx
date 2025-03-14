@@ -47,32 +47,23 @@ const MyApplication = () => {
 
     return (
         <div>
-            <h1>MY application {jobs.length}</h1>
-            <div className="overflow-x-auto">
+            <h1 className='text-center text-2xl font-extrabold pb-6'>MY application {jobs.length}</h1>
+            <div className="overflow-x-auto bg-slate-300 text-black">
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
+                        <tr className='text-black'>
                             <th>Name</th>
                             <th>Job</th>
                             <th>Favorite Color</th>
-                            <th></th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         {/* row 1 */}
                         {
                             jobs.map(job => <tr key={job._id}>
-                                <th>
-                                    <label>
-                                        <input type="checkbox" className="checkbox" />
-                                    </label>
-                                </th>
+                               
                                 <td>
                                     <div className="flex items-center gap-3">
                                         <div className="avatar">
@@ -95,7 +86,7 @@ const MyApplication = () => {
                                 </td>
                                 <td>Purple</td>
                                 <th>
-                                    <button onClick={()=>hendleDelete(job._id)} className="btn btn-ghost btn-xs bg-red-700">x</button>
+                                    <button onClick={()=>hendleDelete(job._id)} className="btn btn-ghost btn-md text-white bg-red-700">x</button>
                                 </th>
                             </tr>)
                         }
