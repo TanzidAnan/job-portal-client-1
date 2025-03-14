@@ -12,7 +12,7 @@ const JobApply = () => {
     const submitJobApplication = (e) => {
         e.preventDefault();
         const form = e.target;
-        const linkin =form.linkin.value;
+        const linkin = form.linkin.value;
         const github = form?.github?.value;
         const resume = form?.resume?.value;
         console.log(linkin, github, resume)
@@ -33,14 +33,14 @@ const JobApply = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if(data.insertedId){
+                if (data.insertedId) {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
                         title: "Your work has been saved",
                         showConfirmButton: false,
                         timer: 1500
-                      });
+                    });
                 }
                 console.log(data)
             })
@@ -50,35 +50,31 @@ const JobApply = () => {
 
 
     return (
-        <div className="hero bg-base-200 min-h-[70vh]">
-            <div className=" flex-col lg:flex-row-reverse">
-                <div className="card bg-base-100 w-full max-w-4xl shrink-0 shadow-2xl">
-                <h1 className="text-5xl font-bold">job apply  now!</h1>
-                    <form onSubmit={submitJobApplication} className="card-body">
-                        <div className="form-control w-full">
-                            <label className="label">
-                                <span className="label-text">linkin URL</span>
-                            </label>
-                            <input type="url" name='linkin' placeholder="linkin url" className="input input-bordered w-full" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">github URL</span>
-                            </label>
-                            <input type="url" name='github' placeholder="github url" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">resume</span>
-                            </label>
-                            <input type="url" name='resume' placeholder="resume" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control mt-6">
-                            <button className="btn btn-primary">Job Apply</button>
-                        </div>
-                    </form>
+        <div className="card bg-slate-100 text-black ring-opacity-45 w-full max-w-full">
+            <h1 className="text-5xl font-bold text-center py-6">job apply  now!</h1>
+            <form onSubmit={submitJobApplication} className="card-body px-24 pb-20">
+                <div className="form-control w-full">
+                    <label className="label">
+                        <span className="label-text">linkin URL</span>
+                    </label>
+                    <input type="url" name='linkin' placeholder="linkin url" className="input input-bordered w-full" required />
                 </div>
-            </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">github URL</span>
+                    </label>
+                    <input type="url" name='github' placeholder="github url" className="input input-bordered w-full" required />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">resume</span>
+                    </label>
+                    <input type="url" name='resume' placeholder="resume" className="input input-bordered w-full" required />
+                </div>
+                <div className="form-control mt-6">
+                    <button className="btn btn-primary w-full">Job Apply</button>
+                </div>
+            </form>
         </div>
     );
 };
