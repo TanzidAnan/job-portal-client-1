@@ -3,7 +3,8 @@ import useAuth from '../../Hooks/UseAuth';
 
 const MyApplication = () => {
     const {user} =useAuth();
-    const [jobs,setJobs] =useState([])
+    const [jobs,setJobs] =useState([]);
+   
     console.log(user.email)
 
     useEffect(() =>{

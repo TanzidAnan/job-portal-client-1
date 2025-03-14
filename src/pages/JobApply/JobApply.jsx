@@ -1,11 +1,13 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useAuth from '../../Hooks/UseAuth';
 import Swal from 'sweetalert2';
+
 
 const JobApply = () => {
     const { id } = useParams();
     const { user } = useAuth();
+    const naveget =useNavigate();
     console.log(user)
     console.log(id);
 
@@ -42,6 +44,7 @@ const JobApply = () => {
                         timer: 1500
                     });
                 }
+                naveget('/myApplication')
                 console.log(data)
             })
 
