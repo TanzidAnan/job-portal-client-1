@@ -1,19 +1,43 @@
 import React from 'react';
+import Swal from 'sweetalert2';
+import useAuth from '../../Hooks/UseAuth';
 
 const AddJobs = () => {
 
-    const hendleAddJobs =e =>{
+    const {user} =useAuth()
+
+    const hendleAddJobs = e => {
         e.preventDefault();
-        const formData =new FormData(e.target);
+        const formData = new FormData(e.target);
         console.log(formData.entries());
-        const initialData =Object.fromEntries(formData.entries());
+        const initialData = Object.fromEntries(formData.entries());
         // console.log(initialData);
 
-        const {min,max,currency, ...newJobs} =initialData;
-        newJobs.salaryRange={min,max,currency}
-        newJobs.requirements =newJobs.requirements.split('\n');
-        newJobs.responsibilities =newJobs.responsibilities.split('\n');
+        const { min, max, currency, ...newJobs } = initialData;
+        newJobs.salaryRange = { min, max, currency }
+        newJobs.requirements = newJobs.requirements.split('\n');
+        newJobs.responsibilities = newJobs.responsibilities.split('\n');
         console.log(newJobs)
+
+        fetch(`http://localhost:5000/jobs`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newJobs)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Your work has been saved",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
     }
 
     return (
@@ -67,7 +91,7 @@ const AddJobs = () => {
                 </div>
                 {/* salary Raing */}
                 <p>Salary Range</p>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'> 
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                     <div className="form-control">
                         <input type="number" name='min' placeholder="min Number" className="input input-bordered" required />
                     </div>
@@ -83,43 +107,43 @@ const AddJobs = () => {
                         </select>
                     </div>
                 </div>
-                 {/* job description */}
-                 <div className="form-control grid grid-cols-1 gap-2">
+                {/* job description */}
+                <div className="form-control grid grid-cols-1 gap-2">
                     <label className="label">
                         <span className="label-text">description</span>
                     </label>
                     <textarea name='description' className="textarea textarea-bordered text-white w-full" placeholder="description"></textarea>
                 </div>
-                 {/* job requirements */}
-                 <div className="form-control grid grid-cols-1 gap-2">
+                {/* job requirements */}
+                <div className="form-control grid grid-cols-1 gap-2">
                     <label className="label">
                         <span className="label-text">job requirements</span>
                     </label>
                     <textarea name='requirements' className="textarea textarea-bordered text-white w-full" placeholder="requirements"></textarea>
                 </div>
-                 {/* job responsibilities */}
-                 <div className="form-control grid grid-cols-1 gap-2">
+                {/* job responsibilities */}
+                <div className="form-control grid grid-cols-1 gap-2">
                     <label className="label">
                         <span className="label-text">job responsibilities</span>
                     </label>
                     <textarea name='responsibilities' className="textarea textarea-bordered text-white w-full" placeholder="responsibilities"></textarea>
                 </div>
-                 {/* hr_name */}
-                 <div className="form-control grid grid-cols-1 gap-2">
+                {/* hr_name */}
+                <div className="form-control grid grid-cols-1 gap-2">
                     <label className="label">
                         <span className="label-text">HR Name</span>
                     </label>
                     <input type="text" name='hr_name' placeholder="HR Name" className="input input-bordered" required />
                 </div>
-                 {/* hr_email */}
-                 <div className="form-control grid grid-cols-1 gap-2">
+                {/* hr_email */}
+                <div className="form-control grid grid-cols-1 gap-2">
                     <label className="label">
                         <span className="label-text">HR Email</span>
                     </label>
-                    <input type="email" name='hr_email' placeholder="HR Email" className="input input-bordered" required />
+                    <input type="email" defaultValue={user?.email} name='hr_email' placeholder="HR Email" className="input input-bordered" required />
                 </div>
-                 {/* hr_email */}
-                 <div className="form-control grid grid-cols-1 gap-2">
+                {/* hr_email */}
+                <div className="form-control grid grid-cols-1 gap-2">
                     <label className="label">
                         <span className="label-text">company logo URL</span>
                     </label>
