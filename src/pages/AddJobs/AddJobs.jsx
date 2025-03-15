@@ -1,10 +1,12 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 import useAuth from '../../Hooks/UseAuth';
+import { useNavigate } from 'react-router-dom';
 
 const AddJobs = () => {
 
-    const {user} =useAuth()
+    const {user} =useAuth();
+    const neveget =useNavigate()
 
     const hendleAddJobs = e => {
         e.preventDefault();
@@ -36,6 +38,7 @@ const AddJobs = () => {
                         showConfirmButton: false,
                         timer: 1500
                     });
+                    neveget('/myPostedJobs')
                 }
             })
     }
