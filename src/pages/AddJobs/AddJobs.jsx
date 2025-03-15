@@ -6,21 +6,21 @@ const AddJobs = () => {
             <h2>Post A new Jobs</h2>
             <form className="card-body bg-slate-50 text-black">
                 {/* job title */}
-                <div className="form-control">
+                <div className="form-control grid grid-cols-1 gap-2">
                     <label className="label">
                         <span className="label-text">job Title</span>
                     </label>
                     <input type="text" name='title' placeholder="job Title" className="input input-bordered" required />
                 </div>
                 {/* job location */}
-                <div className="form-control">
+                <div className="form-control grid grid-cols-1 gap-2">
                     <label className="label">
                         <span className="label-text">Location</span>
                     </label>
                     <input type="text" name='location' placeholder="job Location" className="input input-bordered" required />
                 </div>
                 {/* job type */}
-                <div className="form-control">
+                <div className="form-control grid grid-cols-1 gap-2">
                     <label className="label">
                         <span className="label-text">job type</span>
                     </label>
@@ -32,7 +32,7 @@ const AddJobs = () => {
                     </select>
                 </div>
                 {/* job type */}
-                <div className="form-control ">
+                <div className="form-control grid grid-cols-1 gap-2 ">
                     <label className="label">
                         <span className="label-text">job Field</span>
                     </label>
@@ -44,7 +44,7 @@ const AddJobs = () => {
                     </select>
                 </div>
                 {/* job company */}
-                <div className="form-control">
+                <div className="form-control grid grid-cols-1 gap-2">
                     <label className="label">
                         <span className="label-text">company</span>
                     </label>
@@ -69,21 +69,21 @@ const AddJobs = () => {
                     </div>
                 </div>
                  {/* job description */}
-                 <div className="form-control">
+                 <div className="form-control grid grid-cols-1 gap-2">
                     <label className="label">
                         <span className="label-text">description</span>
                     </label>
                     <textarea name='description' className="textarea textarea-bordered text-white w-full" placeholder="description"></textarea>
                 </div>
                  {/* job requirements */}
-                 <div className="form-control">
+                 <div className="form-control grid grid-cols-1 gap-2">
                     <label className="label">
                         <span className="label-text">job requirements</span>
                     </label>
                     <textarea name='requirements' className="textarea textarea-bordered text-white w-full" placeholder="requirements"></textarea>
                 </div>
                  {/* job responsibilities */}
-                 <div className="form-control">
+                 <div className="form-control grid grid-cols-1 gap-2">
                     <label className="label">
                         <span className="label-text">job responsibilities</span>
                     </label>
