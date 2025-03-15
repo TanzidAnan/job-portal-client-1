@@ -4,7 +4,7 @@ const AddJobs = () => {
     return (
         <div>
             <h2>Post A new Jobs</h2>
-            <form className="card-body">
+            <form className="card-body bg-slate-50 text-black">
                 {/* job title */}
                 <div className="form-control">
                     <label className="label">
@@ -24,7 +24,7 @@ const AddJobs = () => {
                     <label className="label">
                         <span className="label-text">job type</span>
                     </label>
-                    <select className="select select-ghost w-full max-w-xs">
+                    <select className="select select-ghost w-full max-w-xs border-indigo-400">
                         <option disabled selected>Pick a job type</option>
                         <option>Full Time</option>
                         <option>pat Time</option>
@@ -32,11 +32,11 @@ const AddJobs = () => {
                     </select>
                 </div>
                 {/* job type */}
-                <div className="form-control">
+                <div className="form-control ">
                     <label className="label">
                         <span className="label-text">job Field</span>
                     </label>
-                    <select className="select select-ghost w-full max-w-xs">
+                    <select className="select select-ghost w-full max-w-xs border-indigo-400">
                         <option disabled selected>Pick a job Field</option>
                         <option>Engineering</option>
                         <option>Markting</option>
@@ -60,13 +60,34 @@ const AddJobs = () => {
                         <input type="number" name='max' placeholder="Max Number" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
-                        <select className="select select-ghost w-full max-w-xs">
+                        <select className="select select-ghost w-full max-w-xs border-indigo-400">
                             <option disabled selected>currency</option>
                             <option>BDT</option>
                             <option>USD</option>
                             <option>INR</option>
                         </select>
                     </div>
+                </div>
+                 {/* job description */}
+                 <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">description</span>
+                    </label>
+                    <textarea name='description' className="textarea textarea-bordered text-white w-full" placeholder="description"></textarea>
+                </div>
+                 {/* job requirements */}
+                 <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">job requirements</span>
+                    </label>
+                    <textarea name='requirements' className="textarea textarea-bordered text-white w-full" placeholder="requirements"></textarea>
+                </div>
+                 {/* job responsibilities */}
+                 <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">job responsibilities</span>
+                    </label>
+                    <textarea name='responsibilities' className="textarea textarea-bordered text-white w-full" placeholder="responsibilities"></textarea>
                 </div>
                 <div className="form-control mt-6">
                     <button className="btn btn-primary">Login</button>
