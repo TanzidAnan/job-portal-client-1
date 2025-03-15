@@ -89,6 +89,27 @@ const AddJobs = () => {
                     </label>
                     <textarea name='responsibilities' className="textarea textarea-bordered text-white w-full" placeholder="responsibilities"></textarea>
                 </div>
+                 {/* hr_name */}
+                 <div className="form-control grid grid-cols-1 gap-2">
+                    <label className="label">
+                        <span className="label-text">HR Name</span>
+                    </label>
+                    <input type="text" name='hr_name' placeholder="HR Name" className="input input-bordered" required />
+                </div>
+                 {/* hr_email */}
+                 <div className="form-control grid grid-cols-1 gap-2">
+                    <label className="label">
+                        <span className="label-text">HR Email</span>
+                    </label>
+                    <input type="text" name='hr_email' placeholder="HR Email" className="input input-bordered" required />
+                </div>
+                 {/* hr_email */}
+                 <div className="form-control grid grid-cols-1 gap-2">
+                    <label className="label">
+                        <span className="label-text">company logo URL</span>
+                    </label>
+                    <input type="text" name='company_logo' placeholder="company logo URL" className="input input-bordered" required />
+                </div>
                 <div className="form-control mt-6">
                     <button className="btn btn-primary">Login</button>
                 </div>
