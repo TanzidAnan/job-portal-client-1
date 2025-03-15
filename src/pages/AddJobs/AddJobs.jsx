@@ -1,10 +1,25 @@
 import React from 'react';
 
 const AddJobs = () => {
+
+    const hendleAddJobs =e =>{
+        e.preventDefault();
+        const formData =new FormData(e.target);
+        console.log(formData.entries());
+        const initialData =Object.fromEntries(formData.entries());
+        // console.log(initialData);
+
+        const {min,max,currency, ...newJobs} =initialData;
+        newJobs.salaryRange={min,max,currency}
+        newJobs.requirements =newJobs.requirements.split('\n');
+        newJobs.responsibilities =newJobs.responsibilities.split('\n');
+        console.log(newJobs)
+    }
+
     return (
         <div>
             <h2>Post A new Jobs</h2>
-            <form className="card-body bg-slate-50 text-black">
+            <form onSubmit={hendleAddJobs} className="card-body bg-slate-50 text-black">
                 {/* job title */}
                 <div className="form-control grid grid-cols-1 gap-2">
                     <label className="label">
@@ -24,7 +39,7 @@ const AddJobs = () => {
                     <label className="label">
                         <span className="label-text">job type</span>
                     </label>
-                    <select className="select select-ghost w-full max-w-xs border-indigo-400">
+                    <select name='jobType' className="select select-ghost w-full max-w-xs border-indigo-400">
                         <option disabled selected>Pick a job type</option>
                         <option>Full Time</option>
                         <option>pat Time</option>
@@ -36,7 +51,7 @@ const AddJobs = () => {
                     <label className="label">
                         <span className="label-text">job Field</span>
                     </label>
-                    <select className="select select-ghost w-full max-w-xs border-indigo-400">
+                    <select name='category' className="select select-ghost w-full max-w-xs border-indigo-400">
                         <option disabled selected>Pick a job Field</option>
                         <option>Engineering</option>
                         <option>Markting</option>
@@ -60,7 +75,7 @@ const AddJobs = () => {
                         <input type="number" name='max' placeholder="Max Number" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
-                        <select className="select select-ghost w-full max-w-xs border-indigo-400">
+                        <select name='currency' className="select select-ghost w-full max-w-xs border-indigo-400">
                             <option disabled selected>currency</option>
                             <option>BDT</option>
                             <option>USD</option>
@@ -101,7 +116,7 @@ const AddJobs = () => {
                     <label className="label">
                         <span className="label-text">HR Email</span>
                     </label>
-                    <input type="text" name='hr_email' placeholder="HR Email" className="input input-bordered" required />
+                    <input type="email" name='hr_email' placeholder="HR Email" className="input input-bordered" required />
                 </div>
                  {/* hr_email */}
                  <div className="form-control grid grid-cols-1 gap-2">
