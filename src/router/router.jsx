@@ -10,6 +10,7 @@ import JobDetails from "../pages/JobDetails/JobDetails";
 import PravateRoute from "./PravateRoute";
 import JobApply from "../pages/JobApply/JobApply";
 import MyApplication from "../pages/MyApplication/MyApplication";
+import AddJobs from "../pages/AddJobs/AddJobs";
 
   const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ import MyApplication from "../pages/MyApplication/MyApplication";
         {
           path:'/myApplication',
           element:<PravateRoute><MyApplication></MyApplication></PravateRoute>
+        },
+        {
+          path:'/addJob',
+          element:<PravateRoute><AddJobs></AddJobs></PravateRoute>
         },
         {
             path:'/register',
