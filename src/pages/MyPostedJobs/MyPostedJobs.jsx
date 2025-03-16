@@ -18,7 +18,7 @@ const MyPostedJobs = () => {
     return (
         <div>
             <h1>MY Posted Jobs {jobs.length}</h1>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto bg-slate-400 text-black">
                 <table className="table">
                     {/* head */}
                     <thead>
@@ -31,7 +31,7 @@ const MyPostedJobs = () => {
                     </thead>
                     <tbody>
                         {
-                            jobs.map((job,index) => <tr className="bg-base-200">
+                            jobs.map((job,index) => <tr className="bg-white text-black">
                                 <th>{index+1}</th>
                                 <td>Cy Ganderton</td>
                                 <td>Quality Control Specialist</td>
