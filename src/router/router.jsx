@@ -39,7 +39,8 @@ import ViewApplication from "../pages/ViewApplication/ViewApplication";
         },
         {
           path:'/viewApplication/:job_id',
-          element:<PravateRoute><ViewApplication></ViewApplication></PravateRoute>
+          element:<PravateRoute><ViewApplication></ViewApplication></PravateRoute>,
+          loader:({params}) => fetch(`http://localhost:5000/job-application/jobs/${params.job_id}`)
         },
         {
           path:'/myPostedJobs',
