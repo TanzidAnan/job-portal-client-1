@@ -27,7 +27,7 @@ const MyPostedJobs = () => {
                             <th>Job title</th>
                             <th>Application Deadline</th>
                             <th>Application Count</th>
-                            <th>Favorite Color</th>
+                            <th>View Application</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,7 +37,9 @@ const MyPostedJobs = () => {
                                 <td>{job.title}</td>
                                 <td>{job.applicationDeadline}</td>
                                 <td>{job.applicationCount}</td>
-                                <td>Blue</td>
+                                <td>
+                                    <button className='btn btn-link'>View Application</button>
+                                </td>
                             </tr>)
                         }
                     </tbody>
