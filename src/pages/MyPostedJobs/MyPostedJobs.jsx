@@ -24,8 +24,9 @@ const MyPostedJobs = () => {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Name</th>
-                            <th>Job</th>
+                            <th>Job title</th>
+                            <th>Application Deadline</th>
+                            <th>Application Count</th>
                             <th>Favorite Color</th>
                         </tr>
                     </thead>
@@ -33,8 +34,9 @@ const MyPostedJobs = () => {
                         {
                             jobs.map((job,index) => <tr className="bg-white text-black">
                                 <th>{index+1}</th>
-                                <td>Cy Ganderton</td>
-                                <td>Quality Control Specialist</td>
+                                <td>{job.title}</td>
+                                <td>{job.applicationDeadline}</td>
+                                <td>{job.applicationCount}</td>
                                 <td>Blue</td>
                             </tr>)
                         }
