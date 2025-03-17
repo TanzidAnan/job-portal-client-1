@@ -5,6 +5,10 @@ const ViewApplication = () => {
 
     const application = useLoaderData();
 
+    const hendleStatusUpdate =(e,id) =>{
+        console.log(e.target.value, id)
+    }
+
     return (
         <div>
             <h2>Application for this Job {application.length}</h2>
@@ -25,9 +29,12 @@ const ViewApplication = () => {
                             application.map((app, index) => <tr key={app._id} className="bg-base-200">
                                 <th>{index + 1}</th>
                                 <td>{app.applicant_email}</td>
-                                <td>{app.applicant_email}</td>
+                                <td>Status</td>
                                 <td>
-                                    <select defaultValue="Pick a language" className="select select-secondary">
+                                    <select
+                                        onChange={(e)=> hendleStatusUpdate(e,app._id)}
+                                        defaultValue={app.States || 'Change Status'}
+                                        className="select select-secondary">
                                         <option disabled={true}>Change Status</option>
                                         <option>Under Review</option>
                                         <option>Set Interviw</option>
