@@ -15,18 +15,26 @@ const ViewApplication = () => {
                         <tr>
                             <th></th>
                             <th>Email</th>
-                            <th>Email</th>
-                            <th>Favorite Color</th>
+                            <th>States</th>
+                            <th>Update States</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         {
-                            application.map((app,index) => <tr key={app._id} className="bg-base-200">
-                                <th>{index+1}</th>
+                            application.map((app, index) => <tr key={app._id} className="bg-base-200">
+                                <th>{index + 1}</th>
                                 <td>{app.applicant_email}</td>
-                                <td>Quality Control Specialist</td>
-                                <td>Blue</td>
+                                <td>{app.applicant_email}</td>
+                                <td>
+                                    <select defaultValue="Pick a language" className="select select-secondary">
+                                        <option disabled={true}>Change Status</option>
+                                        <option>Under Review</option>
+                                        <option>Set Interviw</option>
+                                        <option>Hired</option>
+                                        <option>Rejected</option>
+                                    </select>
+                                </td>
                             </tr>)
                         }
 
