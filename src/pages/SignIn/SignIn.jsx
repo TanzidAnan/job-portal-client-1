@@ -4,37 +4,43 @@ import Lottie from 'lottie-react';
 import AuthContext from '../../Context/AuthContext/AuthContext';
 import { useLocation, useNavigate } from 'react-router-dom';
 import GoogleSignIn from '../share/GoogleSignIn';
+import axios from 'axios';
 
 const SignIn = () => {
 
-    const {signInUser} =useContext(AuthContext)
+    const { signInUser } = useContext(AuthContext)
 
-    const location =useLocation();
-    const navigate =useNavigate();
-    console.log('login location',location)
+    const location = useLocation();
+    const navigate = useNavigate();
+    console.log('login location', location)
 
-    const from =location.state || "/"
+    const from = location.state || "/"
 
-    const hendleSignIn =e =>{
+    const hendleSignIn = e => {
         e.preventDefault();
-        const form =e.target;
-        const email =form.email.value;
-        const password =form.password.value;
-        console.log(email,password)
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password)
         // password valedation
         // const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/;
 
 
-        signInUser(email,password)
-        .then(result =>{
-            console.log(result.user);
-            navigate(from)
-        })
-        .catch(error =>{
-            console.log(error.message)
-        })
+        signInUser(email, password)
+            .then(result => {
+                console.log('sign In',result.user.email);
+                const user = { email: email }
+                axios.post('http://localhost:5000/jwt',user)
+                .then(data =>{
+                    console.log(data)
+                })
+                // navigate(from)
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
 
-      
+
     }
 
 
