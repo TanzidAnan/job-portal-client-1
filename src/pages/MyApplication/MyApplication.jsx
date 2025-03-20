@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from 'react';
 import useAuth from '../../Hooks/UseAuth';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const MyApplication = () => {
     const { user } = useAuth();
@@ -12,9 +13,18 @@ const MyApplication = () => {
     console.log(user.email)
 
     useEffect(() => {
+
+
         fetch(`http://localhost:5000/job-application?email=${user.email}`)
             .then(res => res.json())
             .then(data => setJobs(data))
+
+         axios.get(`http://localhost:5000/job-application?email=${user.email}`)
+         .then(res=>{
+            setJobs(res.data)
+            console.log(res.data)
+         }) 
+
     }, [user.email])
 
     const hendleDelete =(id) =>{
