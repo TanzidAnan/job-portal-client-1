@@ -31,12 +31,14 @@ const MyApplication = () => {
 
     const hendleDelete =(id) =>{
         Swal.fire({
+            
             title: "Do you want to delete the data?",
             text: "You won't be able to revert this!",
+            target:Link,
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#5A5F8A",
-            cancelButtonColor: "#d33",
+            cancelButtonColor: "#BE7FBB",
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
