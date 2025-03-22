@@ -61,7 +61,7 @@ const MyApplication = () => {
     return (
         <div>
             <h1 className='text-center text-2xl font-extrabold pb-6'>MY application {jobs.length}</h1>
-            <div className="overflow-x-auto bg-slate-300 text-black">
+            <div className="overflow-x-auto bg-cyan-200 font-light text-black">
                 <table className="table">
                     {/* head */}
                     <thead>
