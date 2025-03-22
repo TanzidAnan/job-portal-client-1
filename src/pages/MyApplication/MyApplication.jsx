@@ -31,7 +31,7 @@ const MyApplication = () => {
 
     const hendleDelete =(id) =>{
         Swal.fire({
-            title: "Are you sure?",
+            title: "Do you want to delete the data?",
             text: "You won't be able to revert this!",
             icon: "warning",
             showCancelButton: true,
