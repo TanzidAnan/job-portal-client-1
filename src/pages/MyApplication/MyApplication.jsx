@@ -87,7 +87,7 @@ const MyApplication = () => {
                                             </div>
                                         </div>
                                         <div>
-                                            <div className="font-bold">{job.title}</div>
+                                            <div className="font-bold"><span className='text-amber-900'>JOB:</span>{job.title}</div>
                                             <div className="text-sm opacity-50">United States</div>
                                         </div>
                                     </div>
