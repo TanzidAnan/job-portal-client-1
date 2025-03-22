@@ -97,7 +97,7 @@ const MyApplication = () => {
                                     <br />
                                     <span className="badge badge-ghost badge-sm">{job.location}</span>
                                 </td>
-                                <td>Purple</td>
+                                <td><span className='text-2xl font-bold font-sans'>{job.title}</span></td>
                                 <th>
                                     <button onClick={()=>hendleDelete(job._id)} className="btn btn-ghost btn-md text-white bg-red-700">x</button>
                                 </th>
