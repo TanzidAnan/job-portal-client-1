@@ -9,7 +9,7 @@ import { easeInOut } from 'motion';
 const JobDetails = () => {
     const { _id,company_logo, description, company, category, location, title, } = useLoaderData();
     return (
-        <div className='bg-red-300'>
+        <div>
             <div>
                 <img className='rounded-lg' src={bannerJobsDetails} alt="" />
             </div>
