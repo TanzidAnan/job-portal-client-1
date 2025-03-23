@@ -20,7 +20,7 @@ const GoogleSignIn = () => {
             })
     }
     return (
-        <div>
+        <div className='btn'>
             <button onClick={hendleGoogleSignIn}>Google</button>
         </div>
     );
