@@ -23,6 +23,7 @@ const Navber = () => {
     <li><NavLink to='/myApplication'>MY Application</NavLink></li>
     <li><NavLink to='/addJob'>Add A Job</NavLink></li>
     <li><NavLink to='/myPostedJobs'>MY Jobs</NavLink></li>
+    <li><NavLink to='/myPostedJobs'>MY Jobs</NavLink></li>
   </>
   return (
     <div>
